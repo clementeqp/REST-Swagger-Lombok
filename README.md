@@ -1,6 +1,7 @@
 ### Api REST con CRUD
 
-    * API REST ejemlo CRUD Ejercicio 5 Spring REST 
+    * Proyecto en Spring Boot y Spring Data JPA
+    * API REST con CRUD Swagger y Lombok
     * @author Clemente Quintana
     * @version 1.0
     * Base de datos H2 embebida.
