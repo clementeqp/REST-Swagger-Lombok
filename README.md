@@ -1,8 +1,8 @@
 ### Api REST con Spring Boot
 
 ###### Para ejecutar el proyecto :
-        Run Application o ejecutar desde la consola el comando:
-         `mvn spring-boot:run`
+    Run Application o ejecutar desde la consola el comando:
+    mvn spring-boot:run
 ####
 
 
