@@ -3,9 +3,11 @@ package com.clemen.rest.controllers;
 
 import com.clemen.rest.entities.Cliente;
 import com.clemen.rest.services.ClienteService;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import springfox.documentation.annotations.ApiIgnore;
 
 import java.util.List;
 
@@ -29,6 +31,7 @@ public class ClienteController {
      * Crear un cliente pasado por JSON
      */
     @PostMapping(URL)
+    @ApiOperation("Crear un Cliente")
     public ResponseEntity<Cliente> crearCliente(@RequestBody Cliente cliente){
         if(cliente.getId()!=null)
             return ResponseEntity.badRequest().build();
@@ -38,6 +41,7 @@ public class ClienteController {
     /**
      * Actualizar un cliente
      */
+    @ApiOperation("Actualizar un Cliente")
     @PutMapping(URL)
     public ResponseEntity<Cliente> actualizarCliente(@RequestBody Cliente cliente){
         if(clienteService.buscarPorId(cliente.getId())==null){
@@ -49,6 +53,7 @@ public class ClienteController {
     /**
      * Ver todos los clientes
      */
+    @ApiOperation("Ver todos los Clientes")
     @GetMapping(URL)
     public ResponseEntity<List<Cliente>> verClientes(){
         List<Cliente> clientes = clienteService.verTodosClientes();
@@ -57,6 +62,7 @@ public class ClienteController {
         return ResponseEntity.noContent().build();
     }
 
+    @ApiOperation("Buscar un Cliente por PK, id")
     @GetMapping(URL + "/{id}")
     public ResponseEntity<Cliente> verCliente(@PathVariable Long id){
         if(clienteService.buscarPorId(id)!=null)
@@ -64,7 +70,13 @@ public class ClienteController {
     return ResponseEntity.notFound().build();
     }
 
+    /**
+     *
+     * @param id PK del cliente a borrar
+     * @return ResponseEntity
+     */
     @DeleteMapping(URL + "/{id}")
+    @ApiOperation("Borrar un Cliente por PK, id")
     public ResponseEntity<Cliente> borrarCliente(@PathVariable Long id){
         Cliente cliente = clienteService.buscarPorId(id);
 
@@ -74,5 +86,14 @@ public class ClienteController {
         clienteService.borrarCliente(clienteService.buscarPorId(id));
         return ResponseEntity.noContent().build();
     }
+
+    @ApiIgnore // ignorar este método para que no aparezca en la documentación de la API Swagger
+    @DeleteMapping(URL)
+    public ResponseEntity<Cliente> borrarCliente(){
+        clienteService.borrarTodos();
+        return ResponseEntity.noContent().build();
+    }
+
+
 
 }

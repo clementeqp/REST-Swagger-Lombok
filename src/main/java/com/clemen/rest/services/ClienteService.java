@@ -19,4 +19,6 @@ public interface ClienteService {
 	Cliente crearCliente(Cliente cliente);
 
 	Cliente actualizarCliente(Cliente cliente);
+
+	void borrarTodos();
 }

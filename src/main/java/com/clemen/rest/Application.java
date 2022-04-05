@@ -11,22 +11,18 @@ import org.springframework.context.ApplicationContext;
 import java.sql.Date;
 import java.time.LocalDate;
 
+/**
+ * Clase principal de la aplicación
+ * @author Clemente Quintana
+ * @version 1.0
+ * Base de datos http://localhost:8081/h2-console
+ * Swagger http://localhost:8081/swagger-ui/
+ */
+
 @SpringBootApplication
 public class Application {
 
 	public static void main(String[] args) {
-
-		ApplicationContext context  = SpringApplication.run(Application.class, args);
-		ClienteServiceImpl service = context.getBean(ClienteServiceImpl.class);
-
-		Cliente c1 = new Cliente(null,"Antonio", "Rodriguez", new Date(2010,12,5),"12345678M");
-		Cliente c2 = new Cliente(null,"Ana", "Lopez", new Date(2010,12,5),"12345678M");
-		Cliente c3 = new Cliente(null,"Teresa", "Marino", new Date(2010,12,5),"12345678M");
-
-		service.crearCliente(c1);
-		service.crearCliente(c2);
-		service.crearCliente(c3);
+		SpringApplication.run(Application.class, args);
 	}
-
-
 }

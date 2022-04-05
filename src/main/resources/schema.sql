@@ -1,11 +1,11 @@
 
-DROP TABLE IF EXISTS CLIENTES;
+DROP TABLE IF EXISTS clientes;
 
-CREATE TABLE CLIENTES (
+CREATE TABLE clientes (
                                 id BIGINT AUTO_INCREMENT  PRIMARY KEY,
                                 nombre VARCHAR(250) NOT NULL,
                                 apellidos VARCHAR(250) NOT NULL,
-                                fecha DATE,
+                                fecha_alta DATE,
                                 dni VARCHAR(250) NOT NULL
 );
 

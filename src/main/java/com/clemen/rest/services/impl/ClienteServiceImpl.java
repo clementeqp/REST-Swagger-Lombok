@@ -56,5 +56,10 @@ public class ClienteServiceImpl implements ClienteService {
 	public Cliente actualizarCliente(Cliente cliente) {
 		return clienteRepository.save(cliente);
 	}
-	
+
+	@Override
+	public void borrarTodos() {
+		clienteRepository.deleteAll();
+	}
+
 }
