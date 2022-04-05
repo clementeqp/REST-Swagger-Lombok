@@ -1,4 +1,4 @@
-### Api REST con CRUD
+### Api REST con Spring Boot
 
     * Proyecto en Spring Boot y Spring Data JPA
     * API REST con CRUD Swagger y Lombok
