@@ -1,4 +1,5 @@
 ### Api REST con Spring Boot
+@author Clemente Quintana Pozo
 
 ###### Para ejecutar el proyecto :
     Run Application o ejecutar desde la consola el comando:
@@ -8,7 +9,6 @@
 
     * Proyecto en Spring Boot y Spring Data JPA
     * API REST con CRUD Swagger y Lombok
-    * @author Clemente Quintana
     * @version 1.0
     * Base de datos H2 embebida.
     * http://localhost:8081/h2-console
